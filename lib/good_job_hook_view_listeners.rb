@@ -14,7 +14,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
-class GoodJobHookViewListener < Redmine::Hook::ViewListener
+class GoodJobHookViewListeners < Redmine::Hook::ViewListener
   # チケットがクローズされている場合、Good Job!な画像を表示する
   render_on :view_issues_show_description_bottom, :partial => 'issues/good_job_show_description_bottom', :multipart => true,  :if => :is_enabled?
 

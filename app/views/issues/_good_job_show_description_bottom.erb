@@ -20,7 +20,7 @@
 project = Project.find @issue.project_id
 flag = nil
 unless project.module_enabled? :good_job == nil
-  issue_status_closed = IssueStatus.find :all, :conditions => ["is_closed = (?)", true]
+  issue_status_closed = IssueStatus.where "is_closed = (?)", true
   issue_status_closed.each {|closed|
     if closed.id == @issue.status_id.to_i
       flag = 1
